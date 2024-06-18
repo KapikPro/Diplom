@@ -2,9 +2,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
-COPY Diplom/*.sln .
-COPY Diplom/Diplom/*.csproj ./Diplom/
-COPY Diplom/Diplom/. ./Diplom/
+COPY *.sln .
+COPY Diplom/*.csproj ./Diplom/
+COPY Diplom/. ./Diplom/
 RUN dotnet restore
 
 # copy everything else and build app
